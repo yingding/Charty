@@ -8,6 +8,9 @@ https://docs.jitpack.io/android/
 
 ```
 
+## Add a new tag
+* v1.0.2-alpha02
+
 Guide
 * https://dev.to/vtsen/how-to-publish-android-library-on-jitpackio-with-github-50n1
 
@@ -53,11 +56,13 @@ publishing {
 
 
 # Gradle Setup
-build.gradle
+project root, build.gradle.ktx
 ```
-repositories {
-    maven { url 'https://jitpack.io' }
-}
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { setUrl("https://jitpack.io") } // for charty v1.0.2-alpha01
 
 dependencies {
     implementation 'com.github.yingding:charty:v1.0.2-alpha01'
