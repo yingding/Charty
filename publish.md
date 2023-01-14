@@ -1,4 +1,13 @@
 # Publish to JitPack.io from github
+https://docs.jitpack.io/android/
+
+## Test with
+```
+#     buildTypes is `release`
+./gradlew publishReleasePublicationToMavenLocal
+
+```
+
 Guide
 * https://dev.to/vtsen/how-to-publish-android-library-on-jitpackio-with-github-50n1
 
@@ -44,6 +53,7 @@ publishing {
 
 
 # Gradle Setup
+build.gradle
 ```
 repositories {
     maven { url 'https://jitpack.io' }
@@ -52,4 +62,15 @@ repositories {
 dependencies {
     implementation 'com.github.yingding:charty:v1.0.2-alpha01'
 }
+```
+
+project root build.gradle.kts
+```
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { setUrl("https://jitpack.io") } // for charty v1.0.1-alpha01
+    }
+
 ```

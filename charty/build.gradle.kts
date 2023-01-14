@@ -53,7 +53,7 @@ dependencies {
     androidTestApi(Deps.AndroidTest.uiTestJunit)
 }
 
-plugins.apply(Plugins.vanniktechPublish)
+// plugins.apply(Plugins.vanniktechPublish)
 
 
 publishing {
