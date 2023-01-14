@@ -54,3 +54,18 @@ dependencies {
 }
 
 plugins.apply(Plugins.vanniktechPublish)
+
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.yingding"
+            artifactId = "Charty"
+            version = "1.0.2-alpha01"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}

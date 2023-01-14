@@ -2,7 +2,14 @@
 Guide
 * https://dev.to/vtsen/how-to-publish-android-library-on-jitpackio-with-github-50n1
 
+# build release with github workflow
+* merge feature-branch to main
+* tag the release "1.0.2-alpha02"
+* with label "1.0.2-alpha02"
+* check the pre-release
+* by great the release, artifacts will be generated on github workflow
 
+# build with jitpack.io
 ## Add plugin in lib module charty
 ```kotlin
 plugins {
@@ -11,6 +18,11 @@ plugins {
 }
 ```
 
+## Make jitpack.yml file in project root
+jitpack.yml
+
+## Create publish block in `charty` lib model `build.gradle.kts`
+```add publishing
 publishing {
     publications {
         register<MavenPublication>("release") {
@@ -24,6 +36,12 @@ publishing {
         }
     }
 }
+```
+
+## or just build the release
+* search project repository
+* Login to the jitpack.io and publish it by click on the release
+
 
 # Gradle Setup
 ```
@@ -32,6 +50,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.yingding:MPAndroidChart:v3.1.0'
+    implementation 'com.github.yingding:charty:v1.0.2-alpha01'
 }
 ```
